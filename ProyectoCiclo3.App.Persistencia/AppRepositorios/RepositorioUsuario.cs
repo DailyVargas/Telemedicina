@@ -13,9 +13,9 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
         {
             usuarios= new List<Usuario>()
             {
-                new Usuario{id=1,nombre="Andres",apellidos= "Restrepo",direccion= "calle 23 # 42-13",telefono= "11111113", ciudad="Medellin"},
-                new Usuario{id=2,nombre="Julian",apellidos= "Moncada",direccion= "calle 40 # 42-13",telefono= "99999999", ciudad="Medellin"},
-                new Usuario{id=3,nombre="Pedro",apellidos= "Perez",direccion= "carrera 80 # 2-10",telefono= "2222222", ciudad="Bogota"}
+                new Usuario{id=1,nombre="Camilo",apellidos= "Vargas",direccion= "calle 13 # 02-13",telefono= "2311111", ciudad="Bogota"},
+                new Usuario{id=2,nombre="Eduardo",apellidos= "Rubio",direccion= "calle 20 # 22-03",telefono= "8777777", ciudad="Medellin"},
+                new Usuario{id=3,nombre="Juan",apellidos= "Perez",direccion= "carrera 10 # 2-10",telefono= "6522222", ciudad="Cali"}
             };
         }
  
