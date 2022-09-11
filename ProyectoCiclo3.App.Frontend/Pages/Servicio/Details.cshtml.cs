@@ -9,30 +9,20 @@ using ProyectoCiclo3.App.Dominio;
  
 namespace ProyectoCiclo3.App.Frontend.Pages
 {
-    public class FormServicioModel : PageModel
+    public class DetailsServicioModel : PageModel
     {
-        private readonly RepositorioServicios repositorioServicios;
-        [BindProperty]
+       private readonly RepositorioServicios repositorioServicios;
         public Servicio Servicio {get;set;}
  
-        public FormServicioModel(RepositorioServicios repositorioServicios)
+        public DetailsServicioModel(RepositorioServicios repositorioServicios)
        {
             this.repositorioServicios=repositorioServicios;
        }
  
-        public void OnGet()
+        public IActionResult OnGet(int servicioId)
         {
- 
-        }
- 
-        public IActionResult OnPost()
-        {
-            if(!ModelState.IsValid)
-            {
+                Servicio=repositorioServicios.GetWithId(servicioId);
                 return Page();
-            }            
-            repositorioServicios.Create(Servicio);            
-            return RedirectToPage("./List");
         }
     }
 }

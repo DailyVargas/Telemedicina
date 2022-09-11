@@ -9,10 +9,10 @@
       <th>Id</th>
       <th>Nombre</th>
       <th>Apellidos</th>
-      <th>Edad</th>
-      <th>Dirreccion</th>
+      <th>Direccion</th>
       <th>Telefono</th>
       <th>Ciudad</th>
+      <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -26,17 +26,11 @@
             <td>@usuario.telefono</td>
             <td>@usuario.ciudad</td>
             <td>
-              <div class="btn-group" role="group" aria-label="Basic example">
-              <a class="btn btn-info" asp-page="./Details" asp-route-encomiendaId="@usuario.id"><i class="fas fa-adjust"></i>Ver</a>
-              <a class="btn btn-info" asp-page="./Edit" asp-route-encomiendaId="@usuario.id">Editar</a>
-              <form method="POST">
-                <input type="number" class="form-control d-none" id="id" name="id" placeholder="id" asp-for="@usuario.id">
-                <button type="submit"class="btn btn-danger" href="">Eliminar</button>
-              </form>
-              </div>
+              <a class="btn btn-info" asp-page="./Details" asp-route-usuarioId="@usuario.id"><i class="fas fa-adjust"></i>Ver</a>
+              <a class="btn btn-info" asp-page="./Edit" asp-route-usuarioId="@usuario.id">Editar</a>
+              <a class="btn btn-danger" href="">Eliminar</a>
             </td>
         </tr>
     }
-
   </tbody>
 </table>
