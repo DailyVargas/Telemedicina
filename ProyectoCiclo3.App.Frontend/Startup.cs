@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProyectoCiclo3.App.Persistencia.AppRepositorios;
 namespace ProyectoCiclo3.App.Frontend
+using Microsoft.AspNetCore.Authentication;
+
 {
     public class Startup
     {
@@ -27,6 +29,7 @@ namespace ProyectoCiclo3.App.Frontend
             services.AddSingleton<RepositorioEncomiendas, RepositorioEncomiendas>();
             services.AddSingleton<RepositorioUsuarios,RepositorioUsuarios>();
             services.AddSingleton<RepositorioServicios,RepositorioServicios>();
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +50,7 @@ namespace ProyectoCiclo3.App.Frontend
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
