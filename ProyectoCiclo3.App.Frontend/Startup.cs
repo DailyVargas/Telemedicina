@@ -9,8 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProyectoCiclo3.App.Persistencia.AppRepositorios;
-namespace ProyectoCiclo3.App.Frontend
 using Microsoft.AspNetCore.Authentication;
+namespace ProyectoCiclo3.App.Frontend
+
 
 {
     public class Startup
