@@ -13,7 +13,8 @@ namespace ProyectoCiclo3.App.Frontend.Pages
     [Authorize]
     public class ListUsuarioModel : PageModel
     {
-        
+        [TempData]
+        public bool Error {get;set;}
         private readonly RepositorioUsuarios repositorioUsuarios;
         public IEnumerable<Usuario> Usuarios {get;set;}
         [BindProperty]
@@ -33,7 +34,7 @@ namespace ProyectoCiclo3.App.Frontend.Pages
         {
             if(Usuario.id>0)
             {
-                repositorioUsuarios.Delete(Usuario.id);
+            Error = repositorioUsuarios.Delete(Usuario.id);
             }
             return RedirectToPage("./List");
         }

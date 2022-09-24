@@ -12,7 +12,8 @@ namespace ProyectoCiclo3.App.Frontend.Pages
     [Authorize]
     public class ListEncomiendaModel : PageModel
     {
-        
+        [TempData]
+        public bool Error {get;set;}
         private readonly RepositorioEncomiendas repositorioEncomiendas;
         public IEnumerable<Encomienda> Encomiendas {get;set;}
         [BindProperty]
@@ -32,8 +33,8 @@ namespace ProyectoCiclo3.App.Frontend.Pages
         {
             if(Encomienda.id>0)
             {
-                repositorioEncomiendas.Delete(Encomienda.id);
-            }
+            Error = repositorioEncomiendas.Delete(Encomienda.id);
+                        }
             return RedirectToPage("./List");
         }
     }
